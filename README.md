@@ -15,8 +15,8 @@ RPC client for Bitcoin (and other altcoins based on bitcoind)
 ## Prerequisites
 
 * PHP >= 7.1
-* [furqansiddiqui/http-client](https://github.com/furqansiddiqui/http-client) >= v0.4.1
+* [aytaceminoglu/http-client](https://github.com/aytaceminoglu/http-client) >= v0.4.1
 
 ## Installation
 
-`composer require furqansiddiqui/bitcoind-rpc`
+`composer require aytaceminoglu/bitcoind-rpc`
