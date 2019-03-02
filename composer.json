@@ -19,7 +19,7 @@
   "require": {
     "php": ">=7.1.0",
     "ext-bcmath": "*",
-    "aytaceminoglu/http-client": "^0.4.1"
+    "aytaceminoglu/http-client": "dev-master"
   },
   "autoload": {
     "psr-4": {
