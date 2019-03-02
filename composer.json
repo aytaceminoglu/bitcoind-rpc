@@ -1,5 +1,5 @@
 {
-  "name": "furqansiddiqui/bitcoind-rpc",
+  "name": "aytaceminoglu/bitcoind-rpc",
   "type": "library",
   "description": "JSON-RPC client for Bitcoin (and other altcoins based on bitcoind)",
   "keywords": [
@@ -19,7 +19,7 @@
   "require": {
     "php": ">=7.1.0",
     "ext-bcmath": "*",
-    "furqansiddiqui/http-client": "^0.4.1"
+    "aytaceminoglu/http-client": "^0.4.1"
   },
   "autoload": {
     "psr-4": {
