@@ -22,6 +22,7 @@ use BitcoinRPC\Http\DaemonResponse;
 use BitcoinRPC\Response\SignedRawTransaction;
 use BitcoinRPC\Response\UnspentOutputs;
 use BitcoinRPC\Validator;
+use BitcoinRPC\Response\Output;
 
 /**
  * Class Wallet
@@ -195,26 +196,32 @@ class Wallet
 
     /**
      * @param int $minConfirmations
-     * @param int|null $maxConfirmations
+     * @param int $maxConfirmations
      * @param array|null $addresses
      * @return UnspentOutputs
      * @throws WalletsException
      * @throws \BitcoinRPC\Exception\ResponseObjectException
      */
-    public function listUnspent(int $minConfirmations = 1, ?int $maxConfirmations = null, ?array $addresses = null): UnspentOutputs
+    public function listUnspent(int $minConfirmations = 1, int $maxConfirmations = 9999999, ?array $addresses = null): UnspentOutputs
     {
-        $args = [$minConfirmations];
-        if ($maxConfirmations) {
-            $args[] = $maxConfirmations;
-        }
-
+        $args = [$minConfirmations, $maxConfirmations];
         if ($addresses) {
             $args[] = $addresses;
         }
-
         $res = $this->walletRPC("listunspent", $args);
         if (!is_array($res->result)) {
             throw WalletsException::unexpectedResultType("listUnspent", "Array", gettype($res->result));
+        }
+        return new UnspentOutputs($res->result);
+    }
+
+    public function listTransactions(int $count = 10, ?int $skip = 0): UnspentOutputs
+    {
+        $args = ["*", $count, $skip];
+
+        $res = $this->walletRPC("listtransactions", $args);
+        if (!is_array($res->result)) {
+            throw WalletsException::unexpectedResultType("listTransactions", "Array", gettype($res->result));
         }
 
         return new UnspentOutputs($res->result);
