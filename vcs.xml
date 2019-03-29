@@ -26,4 +26,15 @@
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/PhpstormProjects" />
   </component>
+  <component name="HgRememberedInputs">
+    <option name="visitedUrls">
+      <list>
+        <UrlAndUserName>
+          <option name="url" value="https://git.almeela.com/ersan/android-wallet.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
+      </list>
+    </option>
+    <option name="cloneParentDir" value="$USER_HOME$/aytaceminoglu" />
+  </component>
 </application>
